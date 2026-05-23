@@ -91,6 +91,230 @@ body {
 .main-menu li > *:hover::before, .main-menu li > *:hover::after,
 .main-menu li.active > *::before, .main-menu li.active > *::after { opacity: 1; }
 
+
+
+
+
+
+
+
+
+
+
+/* ==================== ПРАЙС-ЛИСТ (С НУЛЯ) ==================== */
+
+.price-block {
+    padding: 3rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.price-block .block-subtitle {
+    text-align: center;
+    color: #8a7d70;
+    margin-bottom: 2.5rem;
+}
+
+.price-section {
+    margin-bottom: 3rem;
+}
+
+.price-section-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #3a322a;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.price-table thead th {
+    background: #f9f5e9;
+    padding: 1rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #6b5d4f;
+    font-size: 0.9rem;
+}
+
+.price-table thead th:not(:first-child) {
+    text-align: center;
+}
+
+.price-table thead th:last-child {
+    width: 100px;
+}
+
+.price-row {
+    border-bottom: 1px solid #f0ebe5;
+}
+
+.price-row:hover {
+    background: #fdfbf8;
+}
+
+.price-row td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.price-name {
+    font-weight: 500;
+    color: #3a322a;
+}
+
+.price-sub {
+    display: block;
+    font-size: 0.8rem;
+    color: #8a7d70;
+    font-weight: 400;
+    margin-top: 0.2rem;
+}
+
+.price-cost {
+    text-align: center;
+    font-weight: 600;
+    color: #4a3f35;
+}
+
+.price-cost.price-empty {
+    color: #c4b8a8;
+}
+
+.price-action {
+    text-align: center;
+}
+
+.desc-toggle {
+    background: #f5f0e6;
+    border: none;
+    color: #6b5d4f;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.desc-toggle:hover {
+    background: #ebe5d9;
+}
+
+.desc-toggle.active {
+    background: #6b5d4f;
+    color: #fff;
+}
+
+.price-desc-row {
+    display: none;
+}
+
+.price-desc-row td {
+    padding: 0 1rem 1rem;
+}
+
+.desc-content {
+    padding: 1rem;
+    background: #faf8f5;
+    border-radius: 8px;
+    color: #5c4f42;
+    line-height: 1.6;
+    font-size: 0.85rem;
+}
+
+.price-note {
+    font-size: 0.85rem;
+    color: #8a7d70;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.price-course {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: #f9f5e9;
+    border-radius: 12px;
+    border: 1px solid #e6dfd4;
+}
+
+.price-course p {
+    margin: 0;
+    color: #5c4f42;
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+.price-course strong {
+    color: #3a322a;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .price-table thead {
+        display: none;
+    }
+    
+    .price-row {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #f0ebe5;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    
+    .price-row td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px dashed #e8e2d9;
+    }
+    
+    .price-row td:last-child {
+        border-bottom: none;
+        justify-content: center;
+    }
+    
+    .price-desc-row td {
+        display: block;
+        padding: 1rem;
+    }
+    
+    .desc-content {
+        margin: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ================= BUTTONS ================= */
 .button {
 	display: inline-flex; align-items: center; justify-content: center;

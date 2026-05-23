@@ -40,3 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (e.key === 'ArrowRight') show(current + 1);
 	});
 });
+
+
+// Выпадающие описания в прайс-листе

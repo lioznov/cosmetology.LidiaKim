@@ -61,23 +61,292 @@
 	<!-- Основной контент -->
 	<main class="site-content">
 
-		<!-- Блок 0: Главная визитка -->
-		<section class="content-block intro-block" id="block-0">
-			<div class="container">
-				<div class="intro-content">
-					<div class="intro-photo-wrapper">
-						<img src="html/img/photo_mother.jpg" alt="Лидия Лиознова" class="intro-photo">
-						<div class="photo-decoration"></div>
-					</div>
-					
-					<div class="intro-text">
-						<h1 class="intro-name">Лидия Лиознова</h1>
-						<p class="intro-title">Косметолог‑эстетист и консультант по подбору косметики</p>
-						<p class="intro-description">✨ Красивое, ухоженное лицо доступно каждому - главное знать секрет правильного ухода.</p>
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- Блок 7: Прайс-лист -->
+        <section class="content-block price-block" id="block-7">
+            <div class="container">
+                <h1 class="block-title">💎 Прайс-лист</h1>
+                <p class="block-subtitle">Индивидуальный подход и комфорт на каждом сеансе</p>
+
+                <!-- 🔹 Пилинги -->
+                <div class="price-section">
+                    <h2 class="price-section-title">✨ Пилинги</h2>
+                    <table class="price-table price-table--wide">
+                        <thead>
+                            <tr>
+                                <th>Процедура</th>
+                                <th>Лицо</th>
+                                <th>Лицо + шея</th>
+                                <th>Лицо + шея + декольте</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="price-row">
+                                <td class="price-name">Поверхностный пилинг <span class="price-sub">феруловый, азелаиновый, молочный</span></td>
+                                <td class="price-cost">2 300 ₽</td>
+                                <td class="price-cost">2 800 ₽</td>
+                                <td class="price-cost">3 300 ₽</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Мягкая косметическая процедура, которая отшелушивает верхний роговой слой кожи. Стимулирует клеточное обновление, выравнивает тон, устраняет тусклость и не требует длительного восстановления. Подходит для всех типов кожи, включая чувствительную, и подбирается индивидуально под тип кожи и задачи.</div></td>
+                            </tr>
+
+                            <tr class="price-row">
+                                <td class="price-name">BioRePeel <span class="price-sub">биоревитализация без инъекций</span></td>
+                                <td class="price-cost">3 500 ₽</td>
+                                <td class="price-cost">4 500 ₽</td>
+                                <td class="price-cost">5 000 ₽</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Инновационная методика биоревитализации без инъекций, сочетающая ревитализирующий, биостимулирующий и отшелушивающий эффекты. Эффективно обновляет кожу, борется с фотостарением, акне и гиперпигментацией и полностью исключает период реабилитации. Результат — выраженное омоложение, укрепление кожи, ровный тон и сияние без покраснений и шелушений.</div></td>
+                            </tr>
+
+                            <tr class="price-row">
+                                <td class="price-name">SkinSings (антиакне)</td>
+                                <td class="price-cost">2 800 ₽</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Специализированный препарат для лечения активного акне, жирной себореи и их последствий. Снижает воспаления, уменьшает жирный блеск и помогает предотвратить появление новых высыпаний.</div></td>
+                            </tr>
+
+                            <tr class="price-row">
+                                <td class="price-name">Жёлтый пилинг Mediderma</td>
+                                <td class="price-cost">3 700 ₽</td>
+                                <td class="price-cost">4 500 ₽</td>
+                                <td class="price-cost">5 000 ₽</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Липосомальный ретиноидный пилинг для глубокого обновления кожи с лифтинг‑эффектом, уплотнения и укрепления кожи, уменьшения морщин, осветления и выравнивания тона, уменьшения пигментации, сужения пор, снижения жирного блеска и восстановления увлажнения кожи.</div></td>
+                            </tr>
+
+                            <tr class="price-row">
+                                <td class="price-name">Оранжевый пилинг Mediderma</td>
+                                <td class="price-cost">3 500 ₽</td>
+                                <td class="price-cost">4 000 ₽</td>
+                                <td class="price-cost">4 500 ₽</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Липосомальный ретиноидный пилинг, мягко обновляющий кожу, снимающий воспаление и улучшающий её тонус; подходит для более чувствительной кожи. Стимулирует обновление клеток, уменьшает шелушения, улучшает упругость и ровность кожи, помогает снизить пигментацию и жирность.</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 🔹 Карбокситерапия -->
+                <div class="price-section">
+                    <h2 class="price-section-title">✨ Карбокситерапия</h2>
+                    <table class="price-table">
+                        <tr class="price-row">
+                            <td class="price-name">Карбокситерапия лица</td>
+                            <td class="price-cost">2 500 ₽</td>
+                            <td class="price-cost price-empty">—</td>
+                            <td class="price-cost">3 500 ₽</td>
+                            <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                        </tr>
+                        <tr class="price-desc-row">
+                            <td colspan="5"><div class="desc-content">Неинвазивная процедура для улучшения кровообращения, ускорения обновления кожи, выравнивания тона и текстуры, осветления пигментации и уменьшения отёков. Подходит для любого типа кожи, включая чувствительную.</div></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- 🔹 Уходы и мезотерапия -->
+                <div class="price-section">
+                    <h2 class="price-section-title">✨ Уходы и мезотерапия</h2>
+                    <p class="price-note">* Итоговая стоимость зависит от используемого мезококтейля</p>
+                    <table class="price-table price-table--wide">
+                        <thead>
+                            <tr>
+                                <th>Процедура</th>
+                                <th>Лицо</th>
+                                <th>Лицо + шея</th>
+                                <th>Лицо + шея + декольте</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="price-row">
+                                <td class="price-name">Фракционная мезотерапия</td>
+                                <td class="price-cost">3 000 ₽</td>
+                                <td class="price-cost">3 500 ₽</td>
+                                <td class="price-cost">4 500 ₽</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Процедура стимулирует выработку коллагена и эластина, улучшает рельеф кожи, сокращает мелкие морщины, уменьшает шрамы, постакне и пигментацию, а также усиливает действие сывороток в глубоких слоях кожи.</div></td>
+                            </tr>
+
+                            <tr class="price-row">
+                                <td class="price-name">Пилинг + фракционная мезотерапия</td>
+                                <td class="price-cost">3 500 ₽</td>
+                                <td class="price-cost">4 000 ₽</td>
+                                <td class="price-cost">5 000 ₽</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Комбинированная процедура для более выраженного обновления и улучшения текстуры кожи. Усиливает действие пилинга, стимулирует выработку коллагена и делает тон более ровным и сияющим.</div></td>
+                            </tr>
+
+                            <tr class="price-row">
+                                <td class="price-name">Фракционная мезотерапия кожи головы <span class="price-sub">зона</span></td>
+                                <td class="price-cost">3 500 ₽</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Стимулирует местное кровообращение, запускает процессы регенерации и усиливает впитывание лечебных сывороток. Помогает пробудить «спящие» фолликулы, укрепить волосы и бороться с выпадением.</div></td>
+                            </tr>
+
+                            <tr class="price-row">
+                                <td class="price-name">Уход «На выход»</td>
+                                <td class="price-cost">2 500–3 000 ₽</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Комплексный уход для сияния и свежести кожи перед важным выходом.</div></td>
+                            </tr>
+
+                            <tr class="price-row">
+                                <td class="price-name">Маска по типу кожи</td>
+                                <td class="price-cost">700 ₽</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Подбирается под твой тип кожи для увлажнения, матирования, успокоения, лифтинг‑эффекта и питания кожи.</div></td>
+                            </tr>
+
+                            <tr class="price-row">
+                                <td class="price-name">Альгинатная маска</td>
+                                <td class="price-cost">1 000 ₽</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-cost price-empty">—</td>
+                                <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                            </tr>
+                            <tr class="price-desc-row">
+                                <td colspan="5"><div class="desc-content">Маска из морских водорослей для увлажнения, лифтинга, снятия отёчности и сияния кожи.</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 🔹 Массаж лица -->
+                <div class="price-section">
+                    <h2 class="price-section-title">✨ Массаж лица</h2>
+                    <table class="price-table">
+                        <tr class="price-row">
+                            <td class="price-name">Классический + лимфодренажный массаж</td>
+                            <td class="price-cost">2 300 ₽</td>
+                            <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                        </tr>
+                        <tr class="price-desc-row">
+                            <td colspan="3"><div class="desc-content">Снятие мышечного напряжения, улучшение кровообращения и мягкое уменьшение отёчности лица.</div></td>
+                        </tr>
+
+                        <tr class="price-row">
+                            <td class="price-name">Скульптурный / миофасциальный массаж</td>
+                            <td class="price-cost">2 500 ₽</td>
+                            <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                        </tr>
+                        <tr class="price-desc-row">
+                            <td colspan="3"><div class="desc-content">Работа с мышцами и фасциями для выравнивания контура лица и лифтинг‑эффекта.</div></td>
+                        </tr>
+
+                        <tr class="price-row">
+                            <td class="price-name">Хиромассаж лица</td>
+                            <td class="price-cost">3 000 ₽</td>
+                            <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                        </tr>
+                        <tr class="price-desc-row">
+                            <td colspan="3"><div class="desc-content">Испанская мануальная техника безоперационного омоложения Энрике Кастеллс Гарсия. Лифтинг‑эффект, дренаж, питание тканей, антистресс.</div></td>
+                        </tr>
+
+                        <tr class="price-row">
+                            <td class="price-name">Хиромассаж шейно‑воротниковой зоны</td>
+                            <td class="price-cost">3 500 ₽</td>
+                            <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                        </tr>
+                        <tr class="price-desc-row">
+                            <td colspan="3"><div class="desc-content">Снимает мышечное напряжение, улучшает кровообращение, облегчает головные боли и тяжесть в шее, поддерживает хорошую осанку.</div></td>
+                        </tr>
+
+                        <tr class="price-row">
+                            <td class="price-name">Хиромассаж лица + шеи</td>
+                            <td class="price-cost">4 000 ₽</td>
+                            <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                        </tr>
+                        <tr class="price-desc-row">
+                            <td colspan="3"><div class="desc-content">Комплексная процедура для расслабления мышц, улучшения кровообращения, снятия напряжения и восстановления тонуса.</div></td>
+                        </tr>
+                    </table>
+
+                    <div class="price-course">
+                        <p>✨ <strong>Курс массажа</strong><br>
+                        Для максимального результата рекомендуется курс из <strong>10–12 сеансов</strong> (2–3 раза в неделю).<br>
+                        <strong>На курс массажа — скидка 10%</strong></p>
+                    </div>
+                </div>
+
+                <!-- 🔹 Чистки лица -->
+                <div class="price-section">
+                    <h2 class="price-section-title">✨ Чистки лица</h2>
+                    <table class="price-table">
+                        <tr class="price-row">
+                            <td class="price-name">Ультразвуковая чистка + маска</td>
+                            <td class="price-cost">2 500 ₽</td>
+                            <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                        </tr>
+                        <tr class="price-desc-row">
+                            <td colspan="3"><div class="desc-content">Деликатная чистка ультразвуком с последующим уходом.</div></td>
+                        </tr>
+
+                        <tr class="price-row">
+                            <td class="price-name">Чистка лица + пилинг</td>
+                            <td class="price-cost">3 500 ₽</td>
+                            <td class="price-action"><button class="desc-toggle" onclick="toggleDesc(this)">описание</button></td>
+                        </tr>
+                        <tr class="price-desc-row">
+                            <td colspan="3"><div class="desc-content">Глубокое очищение + поверхностный пилинг для обновления и выравнивания кожи.</div></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+        <script>
+        function toggleDesc(btn) {
+            // Находим строку, в которой находится кнопка
+            const currentRow = btn.closest('tr');
+            // Находим следующую за ней строку (которая с описанием)
+            const descRow = currentRow.nextElementSibling;
+            
+            if (descRow && descRow.classList.contains('price-desc-row')) {
+                // Проверяем текущее состояние через getComputedStyle, так как style.display сначала пустой
+                const isHidden = window.getComputedStyle(descRow).display === 'none';
+                
+                if (isHidden) {
+                    descRow.style.display = 'table-row';
+                    btn.classList.add('active');
+                } else {
+                    descRow.style.display = 'none';
+                    btn.classList.remove('active');
+                }
+            }
+        }
+        </script>
+
+
 
 		<!-- Блок 1 -->
 		<section class="content-block" id="block-1">
@@ -152,6 +421,10 @@
 							<!-- 11 (последний по списку файлов - первый в слайдере) -->
 							<div class="diploma-item">
 								<img src="html/img/slides/1.jpg" alt="Диплом 1" loading="lazy">
+							</div>
+                            <!-- Массаж шейно воротниковой зоны -->
+                            <div class="diploma-item">
+								<img src="html/img/slides/sheia-vorotnikovoi.jpg" alt="Массаж шейно-воротниковой зоны" loading="lazy">
 							</div>
 							<!-- 10 -->
 							<div class="diploma-item">
