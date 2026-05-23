@@ -172,6 +172,7 @@ body {
     color: #8a7d70;
     font-weight: 400;
     margin-top: 0.2rem;
+	padding: 0 0 0 5px;
 }
 
 .price-cost {
