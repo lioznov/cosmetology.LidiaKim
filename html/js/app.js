@@ -43,3 +43,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Выпадающие описания в прайс-листе
+function togglePriceDesc(btn) {
+    const row = btn.closest('.price-row');
+    const descRow = row.nextElementSibling;
+    const previewText = btn.getAttribute('data-preview');
+    const previewSpan = btn.querySelector('.desc-preview-text');
+    const icon = btn.querySelector('.desc-icon');
+    
+    if (!descRow || !descRow.classList.contains('price-desc-row')) return;
+    
+    // Проверяем текущее состояние
+    const isOpen = descRow.classList.contains('active-desc');
+    
+    if (isOpen) {
+        // Закрываем
+        descRow.style.display = 'none';
+        descRow.classList.remove('active-desc');
+        btn.classList.remove('active');
+        if (previewSpan) previewSpan.textContent = previewText;
+        if (icon) icon.textContent = '⌄';
+    } else {
+        // Открываем
+        descRow.style.display = 'table-row';
+        descRow.classList.add('active-desc');
+        btn.classList.add('active');
+        if (previewSpan) previewSpan.textContent = 'свернуть';
+        if (icon) icon.textContent = '▲';
+    }
+}

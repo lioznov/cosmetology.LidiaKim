@@ -101,7 +101,7 @@ body {
 
 
 
-/* ==================== ПРАЙС-ЛИСТ (С НУЛЯ) ==================== */
+/* ==================== ПРАЙС-ЛИСТ ==================== */
 
 .price-block {
     padding: 3rem 0;
@@ -144,10 +144,6 @@ body {
     text-align: center;
 }
 
-.price-table thead th:last-child {
-    width: 100px;
-}
-
 .price-row {
     border-bottom: 1px solid #f0ebe5;
 }
@@ -172,7 +168,7 @@ body {
     color: #8a7d70;
     font-weight: 400;
     margin-top: 0.2rem;
-	padding: 0 0 0 5px;
+    padding: 0 0 0 5px;
 }
 
 .price-cost {
@@ -185,19 +181,20 @@ body {
     color: #c4b8a8;
 }
 
-.price-action {
-    text-align: center;
-}
-
+/* === КНОПКА С ОПИСАНИЕМ === */
 .desc-toggle {
     background: #f5f0e6;
     border: none;
     color: #6b5d4f;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s;
+    width: 100%;
+    text-align: left;
+    line-height: 1.4;
+    display: block;
 }
 
 .desc-toggle:hover {
@@ -209,23 +206,37 @@ body {
     color: #fff;
 }
 
+/* === СТРОКА С ОПИСАНИЕМ (скрыта по умолчанию) === */
 .price-desc-row {
     display: none;
 }
 
-.price-desc-row td {
-    padding: 0 1rem 1rem;
+.price-desc-row.active-desc {
+    display: table-row !important;
 }
 
+.price-desc-row td {
+    padding: 0.5rem 1rem 1.5rem;
+}
+
+/* === КОНТЕНТ ОПИСАНИЯ (скрыт по умолчанию) === */
 .desc-content {
-    padding: 1rem;
+    display: none; /* ВАЖНО: скрываем */
+    padding: 1.2rem;
     background: #faf8f5;
     border-radius: 8px;
     color: #5c4f42;
-    line-height: 1.6;
-    font-size: 0.85rem;
+    line-height: 1.7;
+    font-size: 0.9rem;
+    border-left: 4px solid #d4c4a8;
+    margin-top: 0.5rem;
 }
 
+.desc-content.show {
+    display: block; /* ВАЖНО: показываем когда есть класс show */
+}
+
+/* === ДОП. ЭЛЕМЕНТЫ === */
 .price-note {
     font-size: 0.85rem;
     color: #8a7d70;
@@ -252,39 +263,83 @@ body {
     color: #3a322a;
 }
 
-/* Адаптив */
+/* ==================== МОБИЛЬНАЯ ВЕРСИЯ (ПРОПОРЦИОНАЛЬНО МЕНЬШЕ) ==================== */
 @media (max-width: 768px) {
-    .price-table thead {
-        display: none;
+    .price-block {
+        padding: 1rem 0;
     }
-    
-    .price-row {
-        display: block;
-        margin-bottom: 1rem;
-        border: 1px solid #f0ebe5;
-        border-radius: 12px;
-        overflow: hidden;
+
+    .price-section {
+        margin-bottom: 1.5rem;
     }
-    
+
+    .price-section-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .price-table {
+        width: 100%;
+        font-size: 0.72rem; /* Базовый шрифт уменьшен пропорционально */
+        border-collapse: collapse;
+    }
+
+    .price-table thead th {
+        padding: 0.45rem 0.25rem;
+        font-size: 0.68rem;
+        line-height: 1.25;
+        white-space: normal; /* Разрешаем перенос длинных заголовков */
+        word-break: break-word;
+        vertical-align: bottom;
+    }
+
     .price-row td {
-        display: flex;
-        justify-content: space-between;
-        padding: 0.8rem 1rem;
-        border-bottom: 1px dashed #e8e2d9;
+        padding: 0.5rem 0.3rem;
+        vertical-align: middle;
     }
-    
-    .price-row td:last-child {
-        border-bottom: none;
-        justify-content: center;
+
+    .price-name {
+        font-size: 0.82rem;
+        line-height: 1.3;
     }
-    
-    .price-desc-row td {
-        display: block;
-        padding: 1rem;
+
+    .price-sub {
+        font-size: 0.65rem;
+        margin-top: 0.1rem;
     }
-    
+
+    .price-cost {
+        font-size: 0.8rem;
+        font-weight: 600;
+        white-space: nowrap; /* Цены остаются в одну строку */
+    }
+
+    .desc-toggle {
+        font-size: 0.68rem;
+        padding: 0.45rem 0.6rem;
+        border-radius: 8px;
+        line-height: 1.3;
+    }
+
     .desc-content {
-        margin: 0;
+        font-size: 0.75rem;
+        padding: 0.6rem;
+        line-height: 1.45;
+        margin-top: 0.4rem;
+    }
+
+    .price-desc-row td {
+        padding: 0.3rem 0.3rem 0.8rem;
+    }
+
+    .price-note {
+        font-size: 0.75rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .price-course {
+        padding: 0.8rem;
+        font-size: 0.8rem;
     }
 }
 
