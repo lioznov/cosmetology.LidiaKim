@@ -762,3 +762,11 @@ a:focus-visible, button:focus-visible, .button:focus-visible { outline: 3px soli
 		width: min(230px, 100%);
 	}
 }
+
+
+/* Keep social links in a horizontal wrapping row on narrow screens. */
+@media (max-width: 768px) {
+	.main-menu ul {
+		flex-direction: row;
+	}
+}
