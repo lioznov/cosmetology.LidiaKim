@@ -24,7 +24,7 @@
     --btn-primary-hover: #FF7066;
     --btn-outline: #FFB6A3;
     
-    /* Тени и эффекты */
+    /* Тени и визуальные эффекты */
     --shadow-soft: 0 4px 20px rgba(92, 64, 51, 0.08);
     --shadow-card: 0 8px 32px rgba(92, 64, 51, 0.12);
     --shadow-hover: 0 12px 40px rgba(92, 64, 51, 0.18);
@@ -36,7 +36,7 @@
 }
 
 /* ==========================================================================
-   2. СБРОС СТИЛЕЙ, ШРИФТЫ И БАЗОВЫЕ НАСТРОЙКИ
+   2. СБРОС СТИЛЕЙ, ШРИФТЫ И БАЗОВАЯ РАЗМЕТКА
    ========================================================================== */
 @font-face { font-family: montserrat-g; src: url(../fonts/Montserrat-Regular.woff2); font-weight: 400; font-display: swap; }
 @font-face { font-family: montserrat-g; src: url(../fonts/Montserrat-SemiBold.woff2); font-weight: 600; font-display: swap; }
@@ -122,7 +122,7 @@ body {
 }
 
 /* ==========================================================================
-   4. ФИКСИРОВАННАЯ ШАПКА И НАВИГАЦИЯ (HEADER & BURGER MENU)
+   4. ДЕСКТОПНАЯ ШАПКА И МЕНЮ (> 768px)
    ========================================================================== */
 .site-header {
     position: fixed;
@@ -153,7 +153,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
 }
 
 /* Логотип */
@@ -178,63 +177,19 @@ body {
     transition: box-shadow 0.3s ease;
 }
 
-.logo img:hover {
-    box-shadow: 0 6px 24px rgba(255, 138, 128, 0.5);
-}
-
-/* Блок управления в шапке */
-.header-controls {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-/* Кнопка-гамбургер (по умолчанию скрыта на ПК) */
-.burger-btn {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 38px;
-    height: 38px;
-    padding: 9px 7px;
-    background: var(--peach-light);
-    border: 1px solid var(--peach-primary);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.burger-line {
-    width: 100%;
-    height: 2px;
-    background-color: var(--peach-deep);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Анимация крестика при открытом меню */
-.burger-btn.active .burger-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.burger-btn.active .burger-line:nth-child(2) {
-    opacity: 0;
-}
-
-.burger-btn.active .burger-line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Десктопное меню навигации */
+/* Текстовые ссылки меню */
 .main-menu ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5em;
+    gap: 1.8em;
+    align-items: center;
     justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-.main-menu li > * {
+.main-menu li a {
     color: var(--text-secondary);
     text-transform: uppercase;
     font-weight: 600;
@@ -244,10 +199,13 @@ body {
     position: relative;
     padding: 0.4em 0;
     transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
 }
 
-.main-menu li > *::before,
-.main-menu li > *::after {
+/* Декоративные полосы по бокам ссылок */
+.main-menu li a::before,
+.main-menu li a::after {
     content: '';
     display: inline-block;
     height: 2px;
@@ -261,20 +219,38 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.main-menu li > *:hover,
-.main-menu li.active > * {
+.main-menu li a:hover {
     color: var(--peach-deep);
 }
 
-.main-menu li > *:hover::before,
-.main-menu li > *:hover::after,
-.main-menu li.active > *::before,
-.main-menu li.active > *::after {
+.main-menu li a:hover::before,
+.main-menu li a:hover::after {
     opacity: 1;
 }
 
+/* Переключатели отображения контента в шапке (ПК) */
+.nav-text {
+    display: inline;
+}
+
+.nav-icon {
+    display: none;
+}
+
+.btn-text-full {
+    display: inline;
+}
+
+.btn-text-short {
+    display: none;
+}
+
+.button--price {
+    flex-shrink: 0;
+}
+
 /* ==========================================================================
-   5. ГЛАВНЫЙ ЭКРАН (INTRO BLOCK)
+   5. ГЛАВНЫЙ БЛОК (INTRO BLOCK)
    ========================================================================== */
 .site-content {
     padding-top: 110px;
@@ -378,7 +354,7 @@ body {
 }
 
 /* ==========================================================================
-   6. ТЕКСТОВЫЕ БЛОКИ И СПИСКИ (CONTENT LAYOUT)
+   6. ТЕКСТОВЫЕ БЛОКИ И СПИСКИ
    ========================================================================== */
 .content-block {
     padding: 5em 0;
@@ -455,7 +431,7 @@ body {
     line-height: 1.7;
 }
 
-/* Стилизованные списки преимуществ */
+/* Списки с кастомными буллетами */
 .consultation-list {
     list-style: none;
     background: var(--bg-card);
@@ -495,7 +471,7 @@ body {
 }
 
 /* ==========================================================================
-   7. ПРАЙС-ЛИСТ (PRICING TABLES & ACCORDIONS)
+   7. ПРАЙС-ЛИСТ (ТАБЛИЦЫ И АККОРДЕОНЫ)
    ========================================================================== */
 .price-block {
     padding: 3rem 0;
@@ -575,7 +551,7 @@ body {
     color: #c4b8a8;
 }
 
-/* Кнопка раскрытия описания процедуры */
+/* Кнопка раскрытия описания */
 .desc-toggle {
     background: #f5f0e6;
     border: none;
@@ -600,7 +576,7 @@ body {
     color: #fff;
 }
 
-/* Скрытая по умолчанию строка описания */
+/* Выпадающее описание */
 .price-desc-row {
     display: none;
 }
@@ -656,7 +632,7 @@ body {
 }
 
 /* ==========================================================================
-   8. СЛАЙДЕР СЕРТИФИКАТОВ И LIGHTBOX (DIPLOMAS)
+   8. СЛАЙДЕР СЕРТИФИКАТОВ И МОДАЛЬНОЕ ОКНО LIGHTBOX
    ========================================================================== */
 .diplomas-slider {
     width: 100%;
@@ -730,7 +706,7 @@ body {
     margin-top: 10px;
 }
 
-/* Модальное окно просмотра сертификатов (Lightbox) */
+/* Lightbox просмотр фото */
 .lightbox-overlay {
     display: none;
     position: fixed;
@@ -898,12 +874,12 @@ body {
    11. АДАПТИВНОСТЬ: СМАРТФОНЫ (ДО 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Компактный отступ контента сверху под фиксированную шапку */
+    /* Верхний отступ страницы под компактную шапку (~56px) */
     .site-content {
-        padding-top: 72px;
+        padding-top: 60px;
     }
 
-    /* Шапка сайта */
+    /* Шапка в одну аккуратную линию */
     .site-header {
         padding: 6px 0;
     }
@@ -912,77 +888,96 @@ body {
         padding: 0 16px;
     }
 
+    .header-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+    }
+
+    /* Аватар */
     .logo img {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
         border-width: 2px;
     }
 
-    .button--top {
-        margin: 0;
-        padding: 0.5em 1em;
-        font-size: 0.72em;
-        border-radius: 20px;
-    }
-
-    /* Показываем кнопку бургер-меню */
-    .burger-btn {
-        display: flex;
-    }
-
-    /* Выпадающий блок навигации */
+    /* Горизонтальный ряд иконок */
     .main-menu {
-        position: absolute;
-        top: calc(100% + 6px);
-        left: -16px;
-        right: -16px;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(16px);
-        border-bottom: 2px solid var(--peach-primary);
-        box-shadow: 0 14px 28px rgba(92, 64, 51, 0.12);
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.35s ease;
-        padding: 0 20px;
-    }
-
-    .main-menu.open {
-        max-height: 280px;
-        opacity: 1;
-        visibility: visible;
-        padding: 15px 20px 20px;
+        display: flex;
+        position: static;
+        padding: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
     }
 
     .main-menu ul {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
     .main-menu li {
-        width: 100%;
-        text-align: center;
+        width: auto;
+        margin: 0;
+        padding: 0;
     }
 
-    .main-menu li > * {
+    .main-menu li a {
+        padding: 0;
+    }
+
+    /* Скрываем десктопные элементы */
+    .nav-text,
+    .main-menu li a::before,
+    .main-menu li a::after,
+    .btn-text-full {
+        display: none !important;
+    }
+
+    /* Включаем круглые кнопки-иконки */
+    .nav-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--peach-light);
+        color: var(--peach-deep);
+        border: 1px solid rgba(255, 182, 163, 0.7);
+    }
+
+    .nav-icon svg {
+        width: 15px;
+        height: 15px;
         display: block;
-        padding: 8px 0;
-        font-size: 0.88em;
-        border-bottom: 1px dashed rgba(255, 182, 163, 0.4);
     }
 
-    .main-menu li:last-child > * {
-        border-bottom: none;
+    /* Кнопка "Прайс" с отступом от правого края */
+    .btn-text-short {
+        display: inline;
     }
 
-    .main-menu li > *::before,
-    .main-menu li > *::after {
-        display: none;
+    .button--price {
+        margin: 0;
+        padding: 0.45em 0.8em;
+        font-size: 0.68em;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
-    /* Адаптация таблиц прайс-листа */
+    /* Адаптация прайс-листа */
     .price-block {
         padding: 1rem 0;
     }
@@ -1045,7 +1040,7 @@ body {
         padding: 0.3rem 0.3rem 0.8rem;
     }
 
-    /* Адаптация слайдера */
+    /* Адаптация карточек дипломов */
     .diploma-item {
         width: 300px;
         height: 420px;
@@ -1061,6 +1056,10 @@ body {
    12. АДАПТИВНОСТЬ: МАЛЕНЬКИЕ ЭКРАНЫ (ДО 480px)
    ========================================================================== */
 @media (max-width: 480px) {
+    .header-wrapper {
+        padding: 0 12px;
+    }
+
     .intro-block {
         padding: 1.5em 0 3em;
         min-height: auto;

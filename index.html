@@ -27,7 +27,7 @@
 	
 	<!-- Подключение стилей и скриптов -->
 	<script src="html/libs/btn/anim-menu-btn.min.js" defer></script>
-	<link rel="stylesheet" href="html/css/main.css?v=ba158183">
+	<link rel="stylesheet" href="html/css/main.css?v=2">
 	<script src="html/js/app.js" defer></script>
 
 	<!-- Yandex.Metrika counter -->
@@ -48,34 +48,69 @@
 <body>
 
 	<!-- Шапка сайта -->
+   <!-- Шапка сайта -->
+    <!-- Шапка сайта -->
     <header class="site-header">
         <div class="container header-wrapper">
             <div class="header-bar">
                 <!-- Логотип -->
-                <a href="https://t.me/LidiaKimBalance" class="logo">
+                <a href="https://t.me/LidiaKimBalance" class="logo" aria-label="Лидия Лиознова">
                     <img src="html/img/photo_mother.jpg" alt="Лидия Лиознова">
                 </a>
 
-                <!-- Кнопка Прайс + Гамбургер для телефонов -->
-                <div class="header-controls">
-                    <a href="#block-7" class="button button--top button--price">Прайс</a>
-                    
-                    <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
-                        <span class="burger-line"></span>
-                        <span class="burger-line"></span>
-                        <span class="burger-line"></span>
-                    </button>
-                </div>
-
-                <!-- Навигация (на ПК — в строку, на телефоне — выпадающий список) -->
-                <nav class="main-menu" id="mainMenu">
+                <nav class="main-menu">
                     <ul>
-                        <li><a href="https://max.ru/channel_LidiaKimBalance">Макс</a></li>
-                        <li><a href="https://www.instagram.com/lidiakimbalance?igsh=b2U5bGM0bXB6Y29w" target="_blank" rel="noopener">Инстаграм</a></li>
-                        <li><a href="https://t.me/LidiaKimBalanceBeauty" target="_blank" rel="noopener">Телеграм</a></li>
-                        <li><a href="https://vk.ru/club235081000" target="_blank" rel="noopener"><span>ВК</span></a></li>
+                        <li>
+                            <a href="https://max.ru/channel_LidiaKimBalance" target="_blank" rel="noopener">
+                                <span class="nav-text">Макс</span>
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/lidiakimbalance?igsh=b2U5bGM0bXB6Y29w" target="_blank" rel="noopener">
+                                <span class="nav-text">Инстаграм</span>
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/LidiaKimBalanceBeauty" target="_blank" rel="noopener">
+                                <span class="nav-text">Телеграм</span>
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="22" y1="2" x2="11" y2="13"/>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://vk.ru/club235081000" target="_blank" rel="noopener">
+                                <span class="nav-text">ВК</span>
+                                <span class="nav-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M13.162 18.994c.609 0 .858-.406.851-.915-.072-1.075.454-1.57 1.002-1.084.78.694 1.348 1.999 2.453 1.999h2.388c.983 0 1.458-.475 1.187-1.428-.485-1.704-2.146-3.23-2.935-3.876-.412-.34-.343-.594 0-1.112.55-.83 2.193-3.18 2.37-4.417.11-.77-.323-1.161-1.042-1.161h-2.393c-.63 0-.918.31-1.096.721-.86 2.052-2.036 4.391-2.616 4.391-.212 0-.317-.1-.317-.655V8.583c0-.684-.2-.992-.767-.992H8.388c-.43 0-.69.32-.69.626 0 .65.97.8.97 2.628v3.136c0 .686-.123.812-.397.812-.733 0-2.52-2.708-3.58-5.81-.25-.724-.51-1.01-1.144-1.01H1.155c-.754 0-.91.353-.91.745 0 .698.895 4.167 4.167 8.841 2.176 3.123 5.239 4.845 8.75 4.845z"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
+
+                <!-- Кнопка перехода к прайс-листу -->
+                <a href="#block-7" class="button button--top button--price">
+                    <span class="btn-text-full">Прайс-лист</span>
+                    <span class="btn-text-short">Прайс</span>
+                </a>
             </div>
         </div>
     </header>
@@ -140,14 +175,25 @@
 					<p>Мои консультации особенно полезны тем, кто хочет <strong>подобрать правильный, работающий уход и перестать экспериментировать вслепую</strong>.</p>
 					
 					<ul class="consultation-list">
-						<li><strong>Тем, кто хочет решить конкретную проблему кожи</strong> - сухость, стянутость, тусклость, прыщи, акне, жирный блеск, расширенные поры, пигментация, потеря тонуса и упругости.</li>
-						<li><strong>Тем, кто хочет поддерживать уже нормальную кожу и улучшать её состояние</strong>, а не ждать, пока появится проблема.</li>
-						<li><strong>Тем, кто хочет сопровождения и профессиональной поддержки в уходе</strong>, чтобы всегда понимать, что и когда делать, и не бояться «что‑то сломать» в своей коже.</li>
-						<li><strong>Тем, кто уже долго использует косметику, но без результата</strong> - кто‑то перегружает кожу, кто‑то наоборот недостаточно ухаживает, а у кого‑то ничего не меняется, несмотря на все усилия.</li>
-						<li><strong>Тем, кому не хватает понимания:</strong> в чём разница между кремом, сывороткой, тоником, эссенцией, маской; как их правильно комбинировать и не перегружать кожу.</li>
-						<li><strong>Тем, кто хочет разобраться в косметике осознанно</strong> - понимать, что для чего, как правильно ухаживать за кожей, почему важен кожный барьер и как важно беречь чувствительность и защитные функции кожи.</li>
-						<li><strong>Тем, кто хочет совершенствоваться</strong> - улучшать состояние кожи постепенно, безопасно и с долгосрочным эффектом, а не «сверхсильными» методами, которые могут навредить.</li>
-					</ul>
+                    <!-- Новые пункты -->
+                        <li><strong>Тем, кто хочет научиться</strong> грамотному базовому и антивозрастному уходу.</li>
+                        <li><strong>Тем, кто хочет выполнять</strong> косметологические и эстетические процедуры в домашних условиях под моим руководством.</li>
+                        <li><strong>Тем, кто хочет меньше тратить</strong> на салонные процедуры и время на поездки и запись.</li>
+                        <hr style="border: none; border-top: 2px dashed var(--peach-primary); margin: 1.6em 0; opacity: 0.7;">
+                        <!-- Основные пункты -->
+                        <li><strong>Тем, кто хочет решить конкретную проблему кожи</strong> - сухость, стянутость, тусклость, прыщи, акне, жирный блеск, расширенные поры, пигментация, потеря тонуса и упругости.</li>
+                        <li><strong>Тем, кто хочет поддерживать уже нормальную кожу и улучшать её состояние</strong>, а не ждать, пока появится проблема.</li>
+                        <li><strong>Тем, кто хочет сопровождения и профессиональной поддержки в уходе</strong>, чтобы всегда понимать, что и когда делать, и не бояться «что‑то сломать» в своей коже.</li>
+                        <li><strong>Тем, кто уже долго использует косметику, но без результата</strong> - кто‑то перегружает кожу, кто‑то наоборот недостаточно ухаживает, а у кого‑то ничего не меняется, несмотря на все усилия.</li>
+                        <li><strong>Тем, кому не хватает понимания:</strong> в чём разница между кремом, сывороткой, тоником, эссенцией, маской; как их правильно комбинировать и не перегружать кожу.</li>
+                        <li><strong>Тем, кто хочет разобраться в косметике осознанно</strong> - понимать, что для чего, как правильно ухаживать за кожей, почему важен кожный барьер и как важно беречь чувствительность и защитные функции кожи.</li>
+                        <li><strong>Тем, кто хочет совершенствоваться</strong> - улучшать состояние кожи постепенно, безопасно и с долгосрочным эффектом, а не «сверхсильными» методами, которые могут навредить.</li>
+
+                        <!-- Тематический разделитель -->
+                        <hr style="border: none; border-top: 2px dashed var(--peach-primary); margin: 1.6em 0; opacity: 0.7;">
+
+                        
+                    </ul>
 					
 					<p>Если вы хотите <strong>подобрать правильный уход и увидеть реальный результат</strong>, а не тратить деньги на ненужные средства, мои консультации именно для вас.</p>
 				</div>
