@@ -71,3 +71,35 @@ function togglePriceDesc(btn) {
         if (icon) icon.textContent = '▲';
     }
 }
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mainMenu = document.getElementById('mainMenu');
+
+    if (burgerBtn && mainMenu) {
+        // Открытие/закрытие по клику на бургер
+        burgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            burgerBtn.classList.toggle('active');
+            mainMenu.classList.toggle('open');
+        });
+
+        // Закрытие при клике на любую ссылку внутри меню
+        mainMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerBtn.classList.remove('active');
+                mainMenu.classList.remove('open');
+            });
+        });
+
+        // Закрытие при клике вне зоны шапки
+        document.addEventListener('click', (e) => {
+            if (!mainMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+                burgerBtn.classList.remove('active');
+                mainMenu.classList.remove('open');
+            }
+        });
+    }
+});

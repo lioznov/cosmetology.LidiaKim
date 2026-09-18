@@ -48,32 +48,37 @@
 <body>
 
 	<!-- Шапка сайта -->
-	<header class="site-header">
-		<div class="container header-wrapper">
-			<div class="top-line">
-				<div class="row">
-					<div class="col col--center">
-						<a href="https://t.me/LidiaKimBalance" class="logo">
-							<img src="html/img/photo_mother.jpg" alt="Лидия Лиознова">
-						</a>
-					</div>
+    <header class="site-header">
+        <div class="container header-wrapper">
+            <div class="header-bar">
+                <!-- Логотип -->
+                <a href="https://t.me/LidiaKimBalance" class="logo">
+                    <img src="html/img/photo_mother.jpg" alt="Лидия Лиознова">
+                </a>
 
-					<div class="col col--center col--right col--lead">
-						<nav class="main-menu">
-							<ul>
-                                <li><a href="https://max.ru/channel_LidiaKimBalance">Макс</a></li>
-								<li><a href="https://www.instagram.com/lidiakimbalance?igsh=b2U5bGM0bXB6Y29w">Инстаграмм</a></li>
-								<li><a href="https://t.me/LidiaKimBalanceBeauty">Телеграмм</a></li>
-								<li><a href="https://vk.ru/club235081000"><span>ВК</span></a></li>
-							</ul>
-						</nav>
-						<a href="#block-7" class="button button--top button--price">Прайс-лист</a>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+                <!-- Кнопка Прайс + Гамбургер для телефонов -->
+                <div class="header-controls">
+                    <a href="#block-7" class="button button--top button--price">Прайс</a>
+                    
+                    <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </button>
+                </div>
+
+                <!-- Навигация (на ПК — в строку, на телефоне — выпадающий список) -->
+                <nav class="main-menu" id="mainMenu">
+                    <ul>
+                        <li><a href="https://max.ru/channel_LidiaKimBalance">Макс</a></li>
+                        <li><a href="https://www.instagram.com/lidiakimbalance?igsh=b2U5bGM0bXB6Y29w" target="_blank" rel="noopener">Инстаграм</a></li>
+                        <li><a href="https://t.me/LidiaKimBalanceBeauty" target="_blank" rel="noopener">Телеграм</a></li>
+                        <li><a href="https://vk.ru/club235081000" target="_blank" rel="noopener"><span>ВК</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
 	<!-- Основной контент -->
 	<main class="site-content">
@@ -169,72 +174,111 @@
 			</div>
 		</section>
 
-		<!-- Блок 4: Образование -->
-		<section class="content-block" id="block-4">
+		
+
+
+        <script>
+function toggleDesc(btn) {
+    // Находим строку с кнопкой
+    const toggleRow = btn.closest('.price-toggle-row');
+    // Находим следующую строку (описание)
+    const descRow = toggleRow.nextElementSibling;
+    // Находим контент внутри
+    const content = descRow.querySelector('.desc-content');
+    
+    if (descRow && content) {
+        const isActive = btn.classList.contains('active');
+        
+        if (isActive) {
+            // Закрываем
+            descRow.classList.remove('active-desc');
+            content.classList.remove('show');
+            btn.classList.remove('active');
+            btn.textContent = btn.getAttribute('data-original-text');
+        } else {
+            // Открываем
+            descRow.classList.add('active-desc');
+            content.classList.add('show');
+            btn.classList.add('active');
+            btn.textContent = 'Скрыть ▲';
+        }
+    }
+}
+
+// При загрузке сохраняем оригинальные тексты кнопок
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.desc-toggle').forEach(btn => {
+        btn.setAttribute('data-original-text', btn.textContent);
+    });
+});
+</script>
+
+        	<!-- Блок 6 -->
+		<section class="content-block" id="block-6">
 			<div class="container">
-				<h1 class="block-title">4. Моё образование</h1>
+				<h1 class="block-title">4. Как проходит консультация</h1>
 				<div class="block-content">
+					<p>Консультация проходит в несколько простых этапов:</p>
 					
-					<div class="diplomas-slider">
-						<div class="diplomas-track">
-							<!-- 11 (последний по списку файлов - первый в слайдере) -->
-							<div class="diploma-item">
-								<img src="html/img/slides/1.jpg" alt="Диплом 1" loading="lazy">
-							</div>
-                            <!-- Массаж шейно воротниковой зоны -->
-                            <div class="diploma-item">
-								<img src="html/img/slides/sheia-vorotnikovoi.jpg" alt="Массаж шейно-воротниковой зоны" loading="lazy">
-							</div>
-							<!-- 10 -->
-							<div class="diploma-item">
-								<img src="html/img/slides/2.png" alt="Диплом 2" loading="lazy">
-							</div>
-							<!-- 9 -->
-							<div class="diploma-item">
-								<img src="html/img/slides/3.png" alt="Диплом 3" loading="lazy">
-							</div>
-							<!-- 8 -->
-							<div class="diploma-item">
-								<img src="html/img/slides/4.jpg" alt="Диплом 4" loading="lazy">
-							</div>
-							<!-- 7 -->
-							<div class="diploma-item">
-								<img src="html/img/slides/5.png" alt="Диплом 5" loading="lazy">
-							</div>
-							<!-- 6 -->
-							<div class="diploma-item">
-								<img src="html/img/slides/6.jpg" alt="Диплом 6" loading="lazy">
-							</div>
-							<!-- 5 -->
-							<div class="diploma-item">
-								<img src="html/img/slides/7.png" alt="Диплом 7" loading="lazy">
-							</div>
-							<!-- 4 -->
-							<div class="diploma-item">
-								<img src="html/img/slides/8.png" alt="Диплом 8" loading="lazy">
-							</div>
-							<!-- 3 -->
-							<div class="diploma-item">
-								<img src="html/img/slides/9.png" alt="Диплом 9" loading="lazy">
-							</div>
-							<!-- 2 -->
-							<div class="diploma-item">
-								<img src="html/img/slides/10.png" alt="Диплом 10" loading="lazy">
-							</div>
-							<!-- 1 (первый по списку - последний в слайдере) -->
-							<div class="diploma-item">
-								<img src="html/img/slides/11.png" alt="Диплом 11" loading="lazy">
-							</div>
-						</div>
-					</div>
-					<div class="slider-hint">
-						<span>←</span> Листайте вбок для просмотра всех сертификатов <span>→</span>
-					</div>
+					<ul class="consultation-list">
+						<li><strong>Вы получаете инструкцию и заполняете анкету</strong> - я отправляю Вам подробную инструкцию, как и какие фотографии сделать, чтобы я могла оценить Вашу кожу. Вы заполняете анкету с вопросами и тестированием, которые помогут учесть все Ваши особенности и образ жизни.</li>
+						<li><strong>Могу задать уточняющие вопросы</strong> - при необходимости я могу задать дополнительные уточняющие вопросы, чтобы учесть все важные нюансы Вашей ситуации.</li>
+						<li><strong>Подбор ухода и отправка файла</strong> - в течение 7 дней я подберу и структурирую Вашу систему ухода, подберу варианты средств и подробно опишу, как и в какой последовательности ими пользоваться. Отправлю файл‑инструкцию по уходу.</li>
+						<li><strong>Поддержка от 1 до 3 месяцев</strong> - в течение 1–3 месяцев (в зависимости от ситуации) Вы можете задавать мне вопросы по этому уходу, сообщать о результатах, а я помогу при необходимости скорректировать схему и «подтянуть» уход под Ваши изменения.</li>
+						<li><strong>Длительное использование системы ухода</strong> - Вы можете продолжать пользоваться этой системой сколько угодно, пока не изменится время года, Ваши запросы или пока не захотите обновить уход под новые задачи.</li>
+					</ul>
 				</div>
 			</div>
 		</section>
 
-        <!-- Блок 7: Прайс-лист -->
+
+
+
+		<!-- Блок 5: Стоимость -->
+		<section class="content-block" id="block-5">
+			<div class="container">
+				<h1 class="block-title">5. Стоимость консультации</h1>
+				<div class="block-content">
+					
+					<!-- Основная консультация -->
+					<p>Стоимость полной консультации составляет <strong>5 000 рублей</strong>.<br>Эта сумма включает подбор полной системы ухода под вашу кожу и состояние + подробный файл‑инструкцию по использованию средств.</p>
+			
+					<ul class="consultation-list">
+						<li>После получения файла и инструкции я обеспечиваю поддержку от 1 до 3 месяцев (в зависимости от конкретной ситуации и Вашего запроса, в рабочие дни).</li>
+						<li>В этот период Вы можете задавать вопросы по уходу, обсуждать результаты, а при необходимости - мы скорректируем систему, если Ваша кожа или задачи изменятся.</li>
+					</ul>
+					
+					<p>Таким образом, Вы оплачиваете не только разовый подбор, а <strong>поддержку и сопровождение</strong> в течение нескольких недель.</p>
+
+					<!-- Разделитель -->
+					<div style="border-top: 2px dashed var(--peach-primary); margin: 2.5em 0;"></div>
+
+					<!-- Экспресс-консультация -->
+					<p style="font-weight: 700; font-size: 1.1em; margin-bottom: 0.5em;">
+						✨ Также доступна короткая экспресс‑консультация
+					</p>
+					<p>Стоимость - <strong>от 1 000 рублей</strong>.<br>
+					О формировании и возможностях экспресс‑консультации вы можете узнать подробнее в личной переписке.</p>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+    <!-- Блок 7: Прайс-лист -->
         <section class="content-block price-block" id="block-7">
             <div class="container">
                 <h1 class="block-title">💎 Прайс-лист</h1>
@@ -593,88 +637,88 @@
             </div>
         </section>
 
-        <script>
-function toggleDesc(btn) {
-    // Находим строку с кнопкой
-    const toggleRow = btn.closest('.price-toggle-row');
-    // Находим следующую строку (описание)
-    const descRow = toggleRow.nextElementSibling;
-    // Находим контент внутри
-    const content = descRow.querySelector('.desc-content');
-    
-    if (descRow && content) {
-        const isActive = btn.classList.contains('active');
-        
-        if (isActive) {
-            // Закрываем
-            descRow.classList.remove('active-desc');
-            content.classList.remove('show');
-            btn.classList.remove('active');
-            btn.textContent = btn.getAttribute('data-original-text');
-        } else {
-            // Открываем
-            descRow.classList.add('active-desc');
-            content.classList.add('show');
-            btn.classList.add('active');
-            btn.textContent = 'Скрыть ▲';
-        }
-    }
-}
 
-// При загрузке сохраняем оригинальные тексты кнопок
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.desc-toggle').forEach(btn => {
-        btn.setAttribute('data-original-text', btn.textContent);
-    });
-});
-</script>
 
-		<!-- Блок 5: Стоимость -->
-		<section class="content-block" id="block-5">
+
+
+
+
+        <!-- Блок: Образование -->
+		<section class="content-block" id="block-4">
 			<div class="container">
-				<h1 class="block-title">5. Стоимость консультации</h1>
+				<h1 class="block-title">6. Моё образование</h1>
 				<div class="block-content">
 					
-					<!-- Основная консультация -->
-					<p>Стоимость полной консультации составляет <strong>5 000 рублей</strong>.<br>Эта сумма включает подбор полной системы ухода под вашу кожу и состояние + подробный файл‑инструкцию по использованию средств.</p>
-			
-					<ul class="consultation-list">
-						<li>После получения файла и инструкции я обеспечиваю поддержку от 1 до 3 месяцев (в зависимости от конкретной ситуации и Вашего запроса, в рабочие дни).</li>
-						<li>В этот период Вы можете задавать вопросы по уходу, обсуждать результаты, а при необходимости - мы скорректируем систему, если Ваша кожа или задачи изменятся.</li>
-					</ul>
-					
-					<p>Таким образом, Вы оплачиваете не только разовый подбор, а <strong>поддержку и сопровождение</strong> в течение нескольких недель.</p>
-
-					<!-- Разделитель -->
-					<div style="border-top: 2px dashed var(--peach-primary); margin: 2.5em 0;"></div>
-
-					<!-- Экспресс-консультация -->
-					<p style="font-weight: 700; font-size: 1.1em; margin-bottom: 0.5em;">
-						✨ Также доступна короткая экспресс‑консультация
-					</p>
-					<p>Стоимость - <strong>от 1 000 рублей</strong>.<br>
-					О формировании и возможностях экспресс‑консультации вы можете узнать подробнее в личной переписке.</p>
+					<div class="diplomas-slider">
+						<div class="diplomas-track">
+							<!-- 11 (последний по списку файлов - первый в слайдере) -->
+							<div class="diploma-item">
+								<img src="html/img/slides/1.jpg" alt="Диплом 1" loading="lazy">
+							</div>
+							<!-- 10 -->
+							<div class="diploma-item">
+								<img src="html/img/slides/2.png" alt="Диплом 2" loading="lazy">
+							</div>
+							<!-- 9 -->
+							<div class="diploma-item">
+								<img src="html/img/slides/3.png" alt="Диплом 3" loading="lazy">
+							</div>
+							<!-- 8 -->
+							<div class="diploma-item">
+								<img src="html/img/slides/4.jpg" alt="Диплом 4" loading="lazy">
+							</div>
+							<!-- 7 -->
+							<div class="diploma-item">
+								<img src="html/img/slides/5.png" alt="Диплом 5" loading="lazy">
+							</div>
+							<!-- 6 -->
+							<div class="diploma-item">
+								<img src="html/img/slides/6.jpg" alt="Диплом 6" loading="lazy">
+							</div>
+                            <!-- Массаж шейно воротниковой зоны -->
+                            <div class="diploma-item">
+								<img src="html/img/slides/sheia-vorotnikovoi.jpg" alt="Массаж шейно-воротниковой зоны" loading="lazy">
+							</div>
+							<!-- 5 -->
+							<div class="diploma-item">
+								<img src="html/img/slides/7.png" alt="Диплом 7" loading="lazy">
+							</div>
+							<!-- 4 -->
+							<div class="diploma-item">
+								<img src="html/img/slides/8.png" alt="Диплом 8" loading="lazy">
+							</div>
+							<!-- 3 -->
+							<div class="diploma-item">
+								<img src="html/img/slides/9.png" alt="Диплом 9" loading="lazy">
+							</div>
+							<!-- 2 -->
+							<div class="diploma-item">
+								<img src="html/img/slides/10.png" alt="Диплом 10" loading="lazy">
+							</div>
+							<!-- 1 (первый по списку - последний в слайдере) -->
+							<div class="diploma-item">
+								<img src="html/img/slides/11.png" alt="Диплом 11" loading="lazy">
+							</div>
+                            <div class="diploma-item">
+								<img src="html/img/slides/massadge.jpg" alt="Диплом 12" loading="lazy">
+							</div>
+						</div>
+					</div>
+					<div class="slider-hint">
+						<span>←</span> Листайте вбок для просмотра всех сертификатов <span>→</span>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Блок 6 -->
-		<section class="content-block" id="block-6">
-			<div class="container">
-				<h1 class="block-title">6. Как проходит консультация</h1>
-				<div class="block-content">
-					<p>Консультация проходит в несколько простых этапов:</p>
-					
-					<ul class="consultation-list">
-						<li><strong>Вы получаете инструкцию и заполняете анкету</strong> - я отправляю Вам подробную инструкцию, как и какие фотографии сделать, чтобы я могла оценить Вашу кожу. Вы заполняете анкету с вопросами и тестированием, которые помогут учесть все Ваши особенности и образ жизни.</li>
-						<li><strong>Могу задать уточняющие вопросы</strong> - при необходимости я могу задать дополнительные уточняющие вопросы, чтобы учесть все важные нюансы Вашей ситуации.</li>
-						<li><strong>Подбор ухода и отправка файла</strong> - в течение 7 дней я подберу и структурирую Вашу систему ухода, подберу варианты средств и подробно опишу, как и в какой последовательности ими пользоваться. Отправлю файл‑инструкцию по уходу.</li>
-						<li><strong>Поддержка от 1 до 3 месяцев</strong> - в течение 1–3 месяцев (в зависимости от ситуации) Вы можете задавать мне вопросы по этому уходу, сообщать о результатах, а я помогу при необходимости скорректировать схему и «подтянуть» уход под Ваши изменения.</li>
-						<li><strong>Длительное использование системы ухода</strong> - Вы можете продолжать пользоваться этой системой сколько угодно, пока не изменится время года, Ваши запросы или пока не захотите обновить уход под новые задачи.</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+
+
+
+
+
+
+
+
 
 	</main>
 
